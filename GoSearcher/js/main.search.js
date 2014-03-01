@@ -9,8 +9,9 @@ app.controller('SearchController', function ($http) {
 
     this.submit = function () {
         self.isSearching = true;
+        var query = self.query || ""
         $http({
-            url: "/home/search?query=" + self.query,
+            url: "/home/search?query=" + query,
             method: "POST",
             data: { "foo": "bar" }
         }).success(function (data, status, headers, config) {
@@ -20,5 +21,22 @@ app.controller('SearchController', function ($http) {
             self.isSearching = false;
         });
     };
+});
 
+app.directive('gunPreview', function () {
+    return {
+        restrict: 'A',
+        scope: {
+            previewUrl: "&"
+        },
+        link: function (scope, element) {
+            var url = scope.previewUrl();
+            var previewImage = url.substring(0, url.length - 7) + "360fx360f";
+            $(element).popover({
+                html: true,
+                content: "<div><img height='500' width='500' src='" + previewImage + "' /></div>",
+                trigger: 'hover'
+            });
+        }
+    }
 });

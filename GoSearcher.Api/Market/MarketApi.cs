@@ -22,7 +22,7 @@ namespace GoSearcher.Api.Market
             RestRequest request = new RestRequest("market/search/render", Method.GET);
             request.AddParameter("query", buildQuery(query), ParameterType.QueryString);
             request.AddParameter("start", "0", ParameterType.QueryString);
-            request.AddParameter("count", "1000", ParameterType.QueryString);
+            request.AddParameter("count", "100000", ParameterType.QueryString);
 
             var response = client.Execute(request);
 
