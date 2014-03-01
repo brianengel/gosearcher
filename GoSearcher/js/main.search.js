@@ -34,7 +34,7 @@ app.directive('gunPreview', function () {
             var previewImage = url.substring(0, url.length - 7) + "500fx500f";
             $(element).popover({
                 html: true,
-                content: "<div><img height='500' width='500' src='" + previewImage + "' /></div>",
+                content: "<div style='background-color: #111111;'><img height='500' width='500' src='" + previewImage + "' /></div>",
                 trigger: 'hover'
             });
         }

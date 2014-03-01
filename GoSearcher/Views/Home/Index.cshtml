@@ -24,15 +24,14 @@
                     </tr>
                 </thead>
                 <tbody data-ng-repeat="item in search.guns | orderBy:search.sort:search.reverse">
-                    <tr>
+                    <tr class="market-item-row">
                         <td><a href="{{item.url}}" target="_blank">[Link]</a></td>
-                        <td><img data-gun-preview="" data-preview-url="item.image" data-ng-src="{{item.image}}" /></td>
-                        <td>{{item.name}}</td>
+                        <td><img class="market-item-image" data-ng-style="{ 'border-color': item.color }" data-gun-preview="" data-preview-url="item.image" data-ng-src="{{item.image}}" /></td>
+                        <td class="market-item-name" data-ng-style="{ color: item.color }">{{item.name}}</td>
                         <td>{{item.priceDisplay}}</td>
                         <td>{{item.quantity}}</td>
                     </tr>
                 </tbody>
-            
             </table>
         </div>
     </div>

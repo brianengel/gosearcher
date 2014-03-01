@@ -37,6 +37,7 @@ namespace GoSearcher.Business.Html
 
                 entry.ImageUrl = img.Attributes["src"].Value;
                 entry.Name = name.InnerText;
+                entry.Color = GeneralRegex.HexColor.Match(name.Attributes["style"].Value).Value;
                 entry.Quantity = Convert.ToInt32(GeneralRegex.NonNumbers.Replace(qty.InnerText, String.Empty));
                 entry.Price = price;
                 entry.Url = link.Attributes["href"].Value;
