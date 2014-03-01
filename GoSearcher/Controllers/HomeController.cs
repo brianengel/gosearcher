@@ -28,7 +28,7 @@ namespace GoSearcher.Controllers
             MarketResult search = market.Search(query);
             SteamMarketParser parser = new SteamMarketParser();
 
-            var results = parser.Parse(search.ResultsHtml);
+            var results = parser.Parse(search.ResultsHtml).OrderBy(x => x.Name);
 
             string json = JsonConvert.SerializeObject(results);
 

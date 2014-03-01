@@ -11,7 +11,7 @@
             </form>
         </div>
     </div>
-    <div class="row" style="margin-top: 20px;">
+    @*<div class="row" style="margin-top: 20px;">
         <div class="col-md-12">
             <table class="table">
                 <thead>
@@ -23,8 +23,8 @@
                         <th data-ng-click="search.sort = 'quantity'; search.reverse = !search.reverse">Quantity</th>
                     </tr>
                 </thead>
-                <tbody data-ng-repeat="item in search.guns | orderBy:search.sort:search.reverse">
-                    <tr class="market-item-row">
+                <tbody>
+                    <tr data-ng-repeat="item in search.guns | orderBy:search.sort:search.reverse" class="market-item-row">
                         <td><a href="{{item.url}}" target="_blank">[Link]</a></td>
                         <td><img class="market-item-image" data-ng-style="{ 'border-color': item.color }" data-gun-preview="" data-preview-url="item.image" data-ng-src="{{item.image}}" /></td>
                         <td class="market-item-name" data-ng-style="{ color: item.color }">{{item.name}}</td>
@@ -33,6 +33,44 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </div>*@
+
+        <div class="row market-header">
+        <div class="col-md-12">
+            <div class="col-md-1 market-image-header">
+                Image
+            </div>
+            <div class="col-md-10 market-name-header" data-ng-click="search.sort = 'name'; search.reverse = !search.reverse">
+                Name
+            </div>
+            <div class="col-md-1 market-stats-header" data-ng-click="search.sort = 'price'; search.reverse = !search.reverse">
+                Stats
+            </div>
+        </div>
+    </div>
+    <div class="row market-item-row" data-ng-repeat="item in search.guns | orderBy:search.sort:search.reverse">
+        <div class="col-md-12">
+            <div class="col-md-1">
+                <img class="market-item-image" data-ng-style="{ 'border-color': item.color }" data-gun-preview data-preview-url="item.image" data-ng-src="{{item.image}}" />
+            </div>
+            <div class="col-md-10 market-item-name">
+                <a href="{{item.url}}" target="_blank">
+                    <span data-ng-style="{ color: item.color }">{{item.name}}</span>
+                </a>
+            </div>
+            <div class="col-md-1 market-item-stats" >
+                <div class="row">
+                    <div class="col-md-12 market-item-price">
+                        {{item.priceDisplay}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 market-item-quantity">
+                        {{item.quantity}}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
