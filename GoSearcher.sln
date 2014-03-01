@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoSearcher", "GoSearcher\GoSearcher.csproj", "{B7E32822-8371-447C-9F93-60F7C5949D06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoSearcher.Api", "GoSearcher.Api\GoSearcher.Api.csproj", "{AB2B78A6-9132-4F22-8509-85AEDBB650CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoSearcher.Business", "GoSearcher.Business\GoSearcher.Business.csproj", "{794B74FA-5256-4A45-8FDC-658EC3E98AD0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7E32822-8371-447C-9F93-60F7C5949D06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7E32822-8371-447C-9F93-60F7C5949D06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7E32822-8371-447C-9F93-60F7C5949D06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7E32822-8371-447C-9F93-60F7C5949D06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB2B78A6-9132-4F22-8509-85AEDBB650CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB2B78A6-9132-4F22-8509-85AEDBB650CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB2B78A6-9132-4F22-8509-85AEDBB650CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB2B78A6-9132-4F22-8509-85AEDBB650CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{794B74FA-5256-4A45-8FDC-658EC3E98AD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{794B74FA-5256-4A45-8FDC-658EC3E98AD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{794B74FA-5256-4A45-8FDC-658EC3E98AD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{794B74FA-5256-4A45-8FDC-658EC3E98AD0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

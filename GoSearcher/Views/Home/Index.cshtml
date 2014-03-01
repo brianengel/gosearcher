@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div data-ng-controller="SearchController as search">
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form-inline">
+                <input class="form-control" placeholder="Search..." type="text" data-ng-model="search.query"  />
+                <button type="submit" class="btn btn-primary" data-ng-disabled="search.isSearching" data-ng-click="search.submit()">Search</button>
+            </form>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Link</th>
+                        <th>Image</th>
+                        <th data-ng-click="search.sort = 'name'; search.reverse = !search.reverse">Name</th>
+                        <th data-ng-click="search.sort = 'price'; search.reverse = !search.reverse">Price</th>
+                        <th data-ng-click="search.sort = 'quantity'; search.reverse = !search.reverse">Quantity</th>
+                    </tr>
+                </thead>
+                <tbody data-ng-repeat="item in search.guns | orderBy:search.sort:search.reverse">
+                    <tr>
+                        <td><a href="{{item.url}}" target="_blank">[Link]</a></td>
+                        <td><img data-ng-src="{{item.image}}" /></td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.priceDisplay}}</td>
+                        <td>{{item.quantity}}</td>
+                    </tr>
+                </tbody>
+            
+            </table>
+        </div>
+    </div>
+</div>
+
