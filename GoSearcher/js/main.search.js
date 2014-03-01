@@ -31,7 +31,7 @@ app.directive('gunPreview', function () {
         },
         link: function (scope, element) {
             var url = scope.previewUrl();
-            var previewImage = url.substring(0, url.length - 7) + "360fx360f";
+            var previewImage = url.substring(0, url.length - 7) + "500fx500f";
             $(element).popover({
                 html: true,
                 content: "<div><img height='500' width='500' src='" + previewImage + "' /></div>",
