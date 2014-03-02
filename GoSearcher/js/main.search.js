@@ -11,9 +11,8 @@ app.controller('SearchController', ['$http', function ($http) {
         self.isSearching = true;
         var query = self.query || ""
         $http({
-            url: "/home/search?query=" + query,
-            method: "POST",
-            data: { "foo": "bar" }
+            url: "/search?query=" + query,
+            method: "GET"
         }).success(function (data, status, headers, config) {
             self.guns = data;
             self.isSearching = false;
