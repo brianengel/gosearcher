@@ -2,6 +2,10 @@
     background-color: #262627;
 }
 
+.popover {
+    max-width: initial;
+}
+
 .market-container {
     background-color: #171717;
 }

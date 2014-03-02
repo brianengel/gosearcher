@@ -28,6 +28,6 @@ namespace GoSearcher.Business.Html
         public string Color { get; set; }
 
         [JsonProperty("priceDisplay")]
-        public string DisplayPrice { get { return String.Format("${0:n}", Price); } }
+        public string DisplayPrice { get { return Price.ToString("C"); } }
     }
 }

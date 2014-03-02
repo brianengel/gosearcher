@@ -23,6 +23,7 @@ namespace GoSearcher.Controllers
             return View();
         }
 
+        [OutputCache(Duration=120, VaryByParam="query")]
         public ActionResult Search(string query)
         {
             MarketResult search = market.Search(query);
