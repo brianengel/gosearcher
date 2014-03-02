@@ -10,6 +10,8 @@ namespace GoSearcher
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
+            BundleTable.EnableOptimizations = true;
+
             bundles.Add(new StyleBundle("~/bundles/site").Include(
                         "~/css/normalize.css",
                         "~/css/bootstrap.css",
