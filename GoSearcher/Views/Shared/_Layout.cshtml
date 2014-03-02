@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CS:GO Searcher</title>
-    @Styles.Render("~/bundles/site")
+    @Styles.Render("~/bundles/sitecss")
 </head>
 <body>
     <div class="container">
@@ -13,9 +13,6 @@
             @RenderBody()
         </div>
     </div>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script src="@Url.Content("~/js/main.search.js")"></script>
+    @Scripts.Render("~/bundles/sitejs")
 </body>
 </html>

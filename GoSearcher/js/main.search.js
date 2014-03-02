@@ -1,6 +1,6 @@
 ﻿var app = angular.module('app', []);
 
-app.controller('SearchController', function ($http) {
+app.controller('SearchController', ['$http', function ($http) {
     var self = this;
     self.guns = [];
     self.isSearching = false;
@@ -21,7 +21,7 @@ app.controller('SearchController', function ($http) {
             self.isSearching = false;
         });
     };
-});
+}]);
 
 app.directive('gunPreview', function () {
     return {

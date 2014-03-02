@@ -12,10 +12,18 @@ namespace GoSearcher
         {
             BundleTable.EnableOptimizations = true;
 
-            bundles.Add(new StyleBundle("~/bundles/site").Include(
-                        "~/css/normalize.css",
-                        "~/css/bootstrap.css",
-                        "~/css/site.css"));
+            bundles.Add(new StyleBundle("~/bundles/sitecss").Include(
+                "~/css/normalize.css",
+                "~/css/bootstrap.css",
+                "~/css/site.css"
+            ));
+
+            bundles.Add(new ScriptBundle("~/bundles/sitejs").Include(
+                "~/js/jquery.js",
+                "~/js/angular.js",
+                "~/js/bootstrap.js",
+                "~/js/main.search.js"
+            ));
         }
     }
 }
