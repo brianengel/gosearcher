@@ -1,19 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
-namespace GoSearcher.Business.Html
+namespace GoSearcher.Business.Models
 {
-    public class SteamMarketEntry
+    public class Skin
     {
         [JsonProperty("name")]
         public string Name { get; set; }
 
         [JsonProperty("image")]
         public string ImageUrl { get; set; }
+
+        [JsonProperty("imageThumbnail")]
+        public string ImageThumbnail { get { return ImageUrl + "62fx62f"; } }
+
+        [JsonProperty("imageLarge")]
+        public string ImageLarge { get { return ImageUrl + "360fx360f"; } }
 
         [JsonProperty("quantity")]
         public int Quantity { get; set; }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
 namespace GoSearcher.Business
 {
@@ -11,5 +6,6 @@ namespace GoSearcher.Business
     {
         public static Regex NonNumbers = new Regex("[^0-9\\.]", RegexOptions.Compiled);
         public static Regex HexColor = new Regex("#[0-9A-Za-z]{6}", RegexOptions.Compiled);
+        public static Regex SteamImageSize = new Regex("[0-9]+fx[0-9]+f", RegexOptions.Compiled);
     }
 }

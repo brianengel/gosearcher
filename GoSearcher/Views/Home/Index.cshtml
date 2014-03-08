@@ -48,7 +48,7 @@
     <div class="row market-item-row" data-ng-repeat="item in search.guns | orderBy:search.sort:search.reverse">
         <div class="col-md-12">
             <div class="col-md-1">
-                <img class="market-item-image" data-ng-style="{ 'border-color': item.color }" data-gun-preview data-preview-url="item.image" data-ng-src="{{item.image}}" />
+                <img class="market-item-image" data-ng-style="{ 'border-color': item.color }" data-preview-popover="item.imageLarge" data-ng-src="{{item.imageThumbnail}}" />
             </div>
             <div class="col-md-10 market-item-name">
                 <a href="{{item.url}}" target="_blank">

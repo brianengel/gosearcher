@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web;
+using GoSearcher.Business.Models;
 using HtmlAgilityPack;
 
 namespace GoSearcher.Business.Html
@@ -35,7 +33,7 @@ namespace GoSearcher.Business.Html
                 string priceRaw = HttpUtility.HtmlDecode(priceNode.InnerHtml.Trim());
                 decimal price = Convert.ToDecimal(GeneralRegex.NonNumbers.Replace(priceRaw, String.Empty));
 
-                entry.ImageUrl = img.Attributes["src"].Value;
+                entry.ImageUrl = GeneralRegex.SteamImageSize.Replace(img.Attributes["src"].Value, String.Empty);
                 entry.Name = name.InnerText;
                 entry.Color = GeneralRegex.HexColor.Match(name.Attributes["style"].Value).Value;
                 entry.Quantity = Convert.ToInt32(GeneralRegex.NonNumbers.Replace(qty.InnerText, String.Empty));

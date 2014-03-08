@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CsvHelper">
+      <HintPath>..\packages\CsvHelper.2.5.0\lib\net40-client\CsvHelper.dll</HintPath>
+    </Reference>
     <Reference Include="HtmlAgilityPack">
       <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
@@ -46,8 +49,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\ISkinDetailCache.cs" />
+    <Compile Include="Models\ISkinProcessor.cs" />
+    <Compile Include="Models\ISkinTransformer.cs" />
+    <Compile Include="Models\MetaDataSkinTransformer.cs" />
+    <Compile Include="Models\Skin.cs" />
+    <Compile Include="Models\SkinDetail.cs" />
+    <Compile Include="Csv\SkinDetailReader.cs" />
     <Compile Include="GeneralRegex.cs" />
-    <Compile Include="Html\SteamMarketEntry.cs" />
+    <Compile Include="Models\SkinDetailCache.cs" />
+    <Compile Include="Models\SkinProcessor.cs" />
+    <Compile Include="Models\SteamMarketEntry.cs" />
     <Compile Include="Html\SteamMarketParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

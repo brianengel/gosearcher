@@ -22,15 +22,14 @@ app.controller('SearchController', ['$http', function ($http) {
     };
 }]);
 
-app.directive('gunPreview', function () {
+app.directive('previewPopover', function () {
     return {
         restrict: 'A',
         scope: {
-            previewUrl: "&"
+            previewPopover: "&"
         },
         link: function (scope, element) {
-            var url = scope.previewUrl();
-            var previewImage = url.substring(0, url.length - 7) + "500fx500f";
+            var previewImage = scope.previewPopover();
             $(element).popover({
                 html: true,
                 content: "<img height='500' width='500' src='" + previewImage + "' />",

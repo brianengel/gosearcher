@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using GoSearcher.Api.Market;
+﻿using GoSearcher.Api.Market;
+using GoSearcher.Business.Models;
 using Ninject.Modules;
 
 namespace GoSearcher
@@ -12,6 +9,8 @@ namespace GoSearcher
         public override void Load()
         {
             Bind<IMarketApi>().To<MarketApi>();
+            Bind<ISkinDetailCache>().ToConstant<SkinDetailCache>(SkinDetailCache.Current);
+            Bind<ISkinProcessor>().To<SkinProcessor>();
         }
     }
 }
