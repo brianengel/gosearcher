@@ -1,37 +1,14 @@
 ﻿<div data-ng-controller="SearchController as search">
+
     <div class="row">
         <div class="col-md-12">
             <form class="form-inline">
-                <input class="form-control" placeholder="Search..." type="text" data-ng-model="search.query"  />
-                <button type="submit" class="btn btn-primary" data-ng-disabled="search.isSearching" data-ng-click="search.submit()">Search</button>
+                <label class="sr-only" for="search">Search</label>
+                <input class="form-control input-lg" placeholder="Search..." type="text" id="search" data-ng-model="search.query" />
+                <button type="submit" class="btn btn-primary btn-lg" data-ng-disabled="search.isSearching" data-ng-click="search.submit()">Search</button>
             </form>
         </div>
     </div>
-    @*<div class="row" style="margin-top: 20px;">
-        <div class="col-md-12">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Link</th>
-                        <th>Image</th>
-                        <th data-ng-click="search.sort = 'name'; search.reverse = !search.reverse">Name</th>
-                        <th data-ng-click="search.sort = 'price'; search.reverse = !search.reverse">Price</th>
-                        <th data-ng-click="search.sort = 'quantity'; search.reverse = !search.reverse">Quantity</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr data-ng-repeat="item in search.guns | orderBy:search.sort:search.reverse" class="market-item-row">
-                        <td><a href="{{item.url}}" target="_blank">[Link]</a></td>
-                        <td><img class="market-item-image" data-ng-style="{ 'border-color': item.color }" data-gun-preview="" data-preview-url="item.image" data-ng-src="{{item.image}}" /></td>
-                        <td class="market-item-name" data-ng-style="{ color: item.color }">{{item.name}}</td>
-                        <td>{{item.priceDisplay}}</td>
-                        <td>{{item.quantity}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>*@
-
     <div class="row market-header">
         <div class="col-md-12">
             <div class="col-md-1 market-image-header">

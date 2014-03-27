@@ -28,8 +28,8 @@ namespace GoSearcher.Business.Html
                 HtmlNode img = link.SelectSingleNode(".//img[@class='market_listing_item_img']");
                 HtmlNode name = link.SelectSingleNode(".//span[@class='market_listing_item_name']");
                 HtmlNode qty = link.SelectSingleNode(".//span[@class='market_listing_num_listings_qty']");
+                HtmlNode priceNode = link.SelectSingleNode(".//div[@class='market_listing_right_cell market_listing_their_price']/span/span");
 
-                HtmlNode priceNode = qty.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling;
                 string priceRaw = HttpUtility.HtmlDecode(priceNode.InnerHtml.Trim());
                 decimal price = Convert.ToDecimal(GeneralRegex.NonNumbers.Replace(priceRaw, String.Empty));
 
