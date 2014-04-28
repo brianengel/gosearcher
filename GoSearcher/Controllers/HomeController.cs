@@ -18,6 +18,7 @@ namespace GoSearcher.Controllers
         }
 
         [Route("opensearch.xml")]
+        [OutputCache(Duration = Int32.MaxValue)]
         public ActionResult OpenSearch()
         {
             string template = String.Format("{0}?q={{searchTerms}}", HttpContext.RootUrl());

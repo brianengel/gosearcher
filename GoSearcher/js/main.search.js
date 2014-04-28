@@ -23,7 +23,7 @@ app.controller('SearchController', ['$http', 'utils', function ($http, utils) {
 
     self.query = utils.getParameterByName('q');
 
-    if (self.query != null) {
+    if (self.query !== "") {
         this.submit();
     }
 
