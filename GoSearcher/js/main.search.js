@@ -1,6 +1,6 @@
 ﻿var app = angular.module('app', []);
 
-app.controller('SearchController', ['$http', function ($http) {
+app.controller('SearchController', ['$http', 'utils', function ($http, utils) {
     var self = this;
     self.guns = [];
     self.isSearching = false;
@@ -11,8 +11,8 @@ app.controller('SearchController', ['$http', function ($http) {
         self.isSearching = true;
         var query = self.query || ""
         $http({
-            url: "/search?query=" + query,
-            method: "GET"
+            url: '/search?query=' + query,
+            method: 'GET'
         }).success(function (data, status, headers, config) {
             self.guns = data;
             self.isSearching = false;
@@ -20,6 +20,13 @@ app.controller('SearchController', ['$http', function ($http) {
             self.isSearching = false;
         });
     };
+
+    self.query = utils.getParameterByName('q');
+
+    if (self.query != null) {
+        this.submit();
+    }
+
 }]);
 
 app.directive('previewPopover', function () {
@@ -38,3 +45,12 @@ app.directive('previewPopover', function () {
         }
     }
 });
+
+app.service('utils', function() {
+    this.getParameterByName = function (name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    };
+})

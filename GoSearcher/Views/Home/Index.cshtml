@@ -1,11 +1,16 @@
-﻿<div data-ng-controller="SearchController as search">
+﻿@model GoSearcher.ViewModels.Home.HomeIndexViewModel
 
+<div ng-cloak data-ng-controller="SearchController as search">
     <div class="row">
-        <div class="col-md-12">
-            <form class="form-inline">
+        <div class="col-lg-12">
+            <form>
                 <label class="sr-only" for="search">Search</label>
-                <input class="form-control input-lg" placeholder="Search..." type="text" id="search" data-ng-model="search.query" />
-                <button type="submit" class="btn btn-primary btn-lg" data-ng-disabled="search.isSearching" data-ng-click="search.submit()">Search</button>
+                <div class="input-group">
+                    <input type="text" class="form-control input-lg" data-ng-model="search.query" id="search"  placeholder="Search..." />
+                    <span class="input-group-btn">
+                        <button class="btn btn-lg btn-default btn-primary" data-ng-disabled="search.isSearching" data-ng-click="search.submit()" type="submit">Search</button>
+                    </span>
+                </div>
             </form>
         </div>
     </div>
