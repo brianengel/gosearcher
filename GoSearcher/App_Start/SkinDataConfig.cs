@@ -10,6 +10,7 @@ namespace GoSearcher
             string[] paths = new string[] {
                 "~/App_Data/sticker-capsule.csv",
                 "~/App_Data/sticker-capsule-2.csv",
+                "~/App_Data/community-sticker-capsule-1.csv",
                 "~/App_Data/ems-katowice-2014-legends.csv",
                 "~/App_Data/ems-katowice-2014-challengers.csv"
             };
