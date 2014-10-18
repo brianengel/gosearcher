@@ -1,11 +1,13 @@
-﻿var app = angular.module('app', []);
+﻿var app = angular.module('app', ['ngRoute']);
 
-app.controller('SearchController', ['$http', 'utils', function ($http, utils) {
+app.controller('SearchController', ['$http', '$location', 'utils', function ($http, $location, utils) {
     var self = this;
     self.guns = [];
     self.isSearching = false;
     self.sort = 'name';
     self.reverse = false;
+
+    var loc = $location.search();
 
     this.submit = function () {
         self.isSearching = true;

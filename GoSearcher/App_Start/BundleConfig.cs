@@ -16,6 +16,7 @@ namespace GoSearcher
             bundles.Add(new ScriptBundle("~/bundles/sitejs").Include(
                 "~/js/jquery.js",
                 "~/js/angular.js",
+                "~/js/angular-route.js",
                 "~/js/bootstrap.js",
                 "~/js/main.search.js"
             ));
